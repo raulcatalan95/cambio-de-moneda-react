@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import Input from "../components/Input";
 import Selector from "../components/Selector";
 
-const Home = () => {
-  const [dataCurrencies, setDataCurrencies] = useState([]);
+const Home = ({dataCurrencies}) => {
   const [selectedOption, setSelectedOption] = useState({});
   const [amountCurrency, setAmountCurrency] = useState('');
   const [amountPesos, setAmountPesos] = useState('');
@@ -22,19 +21,6 @@ const Home = () => {
           setAmountPesos('')
         }
     };
-
-  useEffect(() => {
-    fetch('https://mindicador.cl/api')
-      .then(response => response.json())
-      .then(data => {
-        const dataArray = Object.entries(data).map(([clave, valor]) => valor.codigo ? { ...valor } : null);
-        const filterArray = dataArray.filter((data) => data);
-        setDataCurrencies(filterArray);
-      })
-      .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-      });
-  }, []);
     
   return (
    <div className="flex flex-col justify-center items-center mt-6 px-6 gap-4">
@@ -46,7 +32,7 @@ const Home = () => {
     {
       selectedOption.codigo &&
         <div className="w-full flex flex-col items-center gap-4">
-          <div className="text-white dark:bg-gray-900 rounded-lg p-4">
+          <div className="text-white bg-blue-900 rounded-lg p-4">
               <p className="text-sm">
                 Valor <span className="font-bold">{selectedOption.nombre}</span> a la fecha de
                  <span className="font-bold"> {new Date(selectedOption.fecha).toLocaleDateString('es-es', {year:"numeric", month:"short", day:"numeric"}) }</span> es de 
