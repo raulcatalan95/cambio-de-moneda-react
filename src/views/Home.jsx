@@ -40,7 +40,7 @@ const Home = () => {
    <div className="flex flex-col justify-center items-center mt-6 px-6 gap-4">
     <div className="w-full">
       <h1 className="text-2xl mb-5">Cambiar divisas a pesos</h1>
-      <label htmlFor="select-currency">Selecciona una divisa</label>
+      <label>Selecciona una divisa</label>
       <Selector id="select-currency" options={dataCurrencies} handleChange={handleChangeSelector} selectedOption={selectedOption}/>
     </div>
     {

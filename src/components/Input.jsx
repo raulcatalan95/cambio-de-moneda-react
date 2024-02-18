@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 const Input = ({amount, setValorInput, isChile, trasnformToPeso}) => {
 
     const handleChange = (event) => {
-        const regexNumeros = /^[0-9]+$/;
-        const isOnlyNumbers = event.target.value.match(regexNumeros);
+        const regexNumbers = /^(?!^\.)(?:\d+\.?\d*)$/;
+        const isOnlyNumbers = event.target.value.match(regexNumbers);
         if (!isChile && ( isOnlyNumbers || event.target.value === '')) {
             setValorInput(event.target.value);
         }
