@@ -54,7 +54,7 @@ const searchValueForDate = () => {
             type="date"
             id="date"
             onChange={handleChangeDate}
-            className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-blue-500 w-full"
+            className="border border-gray-300 rounded px-4 py-2 w-full"
           />
           {
             responseDate.nombre &&
