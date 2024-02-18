@@ -1,7 +1,9 @@
 
 const ForDate = () => {
   return (
-    <div>ForDate</div>
+    <div className="p-4">
+      <h1 className="text-2xl">!Proximamnete estará disponible esta funcionalidad!</h1>
+    </div>
   )
 }
 
