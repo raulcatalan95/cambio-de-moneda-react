@@ -42,19 +42,19 @@ const searchValueForDate = () => {
     { isLoading && <Loader /> }
     <div className="flex flex-col gap-4 p-4">
       <h1 className="text-xl mb-5">Buscar valor por fecha</h1>
-      <div>
+      <div className="w-full">
         <label>Selecciona una divisa</label>
         <Selector id="select-currency" options={dataCurrencies} handleChange={handleChangeSelector} selectedOption={selectedOption}/>
       </div>
       {
         selectedOption.codigo &&
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full">
             <label htmlFor="date">Selecciona una fecha</label>
             <input
             type="date"
             id="date"
             onChange={handleChangeDate}
-            className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-blue-500"
+            className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:border-blue-500 w-full"
           />
           {
             responseDate.nombre &&
