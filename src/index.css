@@ -41,11 +41,14 @@ button:disabled {
 
 /* Estilo personalizado para input de tipo date */
 input[type="date"] {
-  width: 100%;
   /* Eliminar el icono de calendario predeterminado en Chrome y Safari */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background-image: url('./assets/icon-calendar.png');
+  background-size: 0.75em 0.75em;
+  background-position: right .75rem center;
+  background-repeat: no-repeat;
 
   /* Ajustar el ancho y el alto del input para evitar que sea demasiado largo */
   width: 100%;
@@ -65,7 +68,7 @@ input[type="date"] {
   outline: none;
 
   /* Establecer el color del borde al enfocar */
-  border-color: #80bdff;
+  border-color: #b1b1b1;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
